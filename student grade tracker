@@ -1,0 +1,48 @@
+/* this is student grade calculation program based on their total marks. */
+while True:
+    try:
+        Name=input("Enter Student Name:")
+        cls=int(input("Enter class of the student:"))
+        tel=float(input("Enter telugu marks out of 100: "))
+        hin=float(input("Enter Hindi marks out of 100: "))
+        en=float(input("Enter English marks out of 100: "))
+        maths=float(input("Enter Maths marks out of 100: "))
+        science=float(input("Enter Science marks out of 100: "))
+        social=float(input("Enter Social marks out of 100: "))
+    except ValueError:
+        print("Don't enter numbers for Name and alnums,alphas,special symbols for others and floats,alnums,alphas,"
+              "special symbols for class")
+    else:
+        if tel>100 or hin>100 or en>100 or maths>100 or science>100 or social>100:
+            print( "you entered Subject marks above 100----please check it once.")
+        else:
+            total=tel+hin+en+maths+science+social
+            avg=total/6
+            print("*"*50)
+            print(f"{Name} Marks and Grade details")
+            print("*" * 50)
+            print(f"Name of the student is:{Name}")
+            print(f"Class of the student is:{cls}")
+            print(f"Total Marks of the student out of 600 is:{total}")
+            print(f"Average Marks of the student in all subjects:{avg}")
+            if tel<40 or hin<40 or en<40 or maths<40 or science<40 or social<40:
+                print("Student got below 40 marks in one or more subjects. ")
+                print(f"Grade : F")
+            else:
+                if total<=600 and total>=500:
+                    print(f"Grade : A")
+                elif total<500 and total>=400:
+                    print(f"Grade : B")
+                elif total<400 and total>=300:
+                    print(f"Grade : C")
+                elif total<300 and total>=240:
+                    print(f"Grade : D")
+                else:
+                    print(f"Grade : F ")
+            print("*" * 50)
+    ch=input("Do you want check another one (yes/no):")
+    if ch=="no":
+        print("tnx using this program")
+        break
+
+
